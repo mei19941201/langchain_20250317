@@ -1,0 +1,190 @@
+[
+    {
+        "question": "请列出配送协议中，供货机构为【仁寿工厂】和要货机构为【杜智勇 19181738589】的所有协议详情，字段包括：物品名称、采购单位、配送方式、协议单价、税率",
+        "answer": "list_delivery_agreement_details"
+    },
+    {
+        "question": "请帮我导出要货机构为【杜智勇 19181738589】，日期区间为2月1日到2月28日之间的所有配送申请单",
+        "answer": "export_delivery_request_form"
+    },
+    {
+        "question": "请帮我导出3月1日到3月8日期间，所有待付款的配送申请单",
+        "answer": "export_the_pending_shipping_request_form"
+    },
+    {
+        "question": "请帮我导出1月1日到1月15日期间，所有未开票的配送申请单",
+        "answer": "export_uninvoiced_shipping_request_form"
+    },
+    {
+        "question": "请帮我统计供货机构为【仁寿工厂】，日期区间为2月1日到2月28日除了已删除以外的所有配送申请单的总销售金额及订单总数",
+        "answer": "statistical_delivery_application_form"
+    },
+    {
+        "question": "请帮我导出截止到昨天，所有待分仓的配送订单",
+        "answer": "export_the_delivery_order_to_be_divided"
+    },
+    {
+        "question": "请帮我导出2月份整月的发货单，字段包括：单据号、供货机构、要货机构、发货仓库、来源配送申请单、已发货金额、单据状态、订单日期、发货日期、备注、物流单号",
+        "answer": "export_delivery_orders"
+    },
+    {
+        "question": "请基于配送调价单，帮我整理出【仁寿工厂】2月份所有的调价记录，格式为：调价日期、协议名称、物品名称、采购单位、调价类型、调整前单价、调整后单价",
+        "answer": "export_price_adjustment_records"
+    },
+    {
+        "question": "销售业绩查询：请查询机构为【总经理：蔡涛】2月份的总利润（在2月份所有配送申请单中，和该机构相关的订单中，该机构佣金的总和）",
+        "answer": "query_sales_performance"
+    },
+    {
+        "question": "请列出配送协议中，供货机构为【仁寿工厂】和要货机构为【杜智勇 19181738589】的所有协议详情",
+        "answer": "list_delivery_agreement_details"
+    },
+    {
+        "question": "请帮我导出要货机构为【杜智勇 19181738589】，日期区间为2月1日到2月28日之间的所有配送申请单",
+        "answer": "export_delivery_request_form"
+    },
+    {
+        "question": "请帮我导出3月1日到3月8日期间，所有待付款的配送申请单",
+        "answer": "export_the_pending_shipping_request_form"
+    },
+    {
+        "question": "请帮我导出1月1日到1月15日期间，所有未开票的配送申请单",
+        "answer": "export_uninvoiced_shipping_request_form"
+    },
+    {
+        "question": "请帮我统计供货机构为【仁寿工厂】，日期区间为2月1日到2月28日除了已删除以外的所有配送申请单的总销售金额及订单总数",
+        "answer": "statistical_delivery_application_form"
+    },
+    {
+        "question": "请帮我导出截止到昨天，所有待分仓的配送订单",
+        "answer": "export_the_delivery_order_to_be_divided"
+    },
+    {
+        "question": "请帮我导出2月份整月的发货单",
+        "answer": "export_delivery_orders"
+    },
+    {
+        "question": "请基于配送调价单，帮我整理出【仁寿工厂】2月份所有的调价记录",
+        "answer": "export_price_adjustment_records"
+    },
+    {
+        "question": "销售业绩查询：请查询机构为【总经理：蔡涛】2月份的总利润（在2月份所有配送申请单中，和该机构相关的订单中，该机构佣金的总和）",
+        "answer": "query_sales_performance"
+    },
+    {
+        "question": "请列出物品名称为【刘伟伟定制牛油】在机构【仁寿工厂】中的库存情况，格式为：仓库名称、可用量、现存量、库存单位、规格型号",
+        "answer": "list_inventory_details"
+    },
+    {
+        "question": "请列出物品名称为【刘伟伟定制牛油】在机构【仁寿工厂】中2月份所有出入库类型的汇总，格式为：物品名称、规格型号、库存单位、期初数量、期初金额、XX出库数量、XX出库金额、XX入库数量、XX入库金额、期末数量、期末金额",
+        "answer": "summarize_inventory_movements"
+    },
+    {
+        "question": "请列出机构【仁寿工厂】2月份的盘点盈亏情况，格式为：物品名称、规格型号、库存单位、仓库、盘点日期、账面数量、账面金额、实盘数量、实盘金额、盈亏数量、盈亏金额",
+        "answer": "list_inventory_adjustments"
+    },
+    {
+        "question": "请统计物品名称为【刘伟伟定制牛油】在机构【仁寿工厂】中2月份所有采购入库的记录，格式为：物品名称、规格型号、入库日期、入库仓库、入库金额、入库数量、采购单位",
+        "answer": "summarize_purchase_receipts"
+    },
+    {
+        "question": "请统计物品名称为【合【定制】716火锅底料】在机构【仁寿工厂】中2月份的所有发货出库记录，格式为：物品名称、规格型号、出库日期、出库仓库、出库数量、出库金额、单位",
+        "answer": "summarize_shipment_outgoing"
+    },
+    {
+        "question": "请列出物品名称为【刘伟伟定制牛油】在机构【仁寿工厂】中的库存情况",
+        "answer": "list_inventory_details"
+    },
+    {
+        "question": "请列出物品名称为【刘伟伟定制牛油】在机构【仁寿工厂】中2月份所有出入库类型的汇总",
+        "answer": "summarize_inventory_movements"
+    },
+    {
+        "question": "请列出机构【仁寿工厂】2月份的盘点盈亏情况",
+        "answer": "list_inventory_adjustments"
+    },
+    {
+        "question": "请统计物品名称为【刘伟伟定制牛油】在机构【仁寿工厂】中2月份所有采购入库的记录",
+        "answer": "summarize_purchase_receipts"
+    },
+    {
+        "question": "请统计物品名称为【合【定制】716火锅底料】在机构【仁寿工厂】中2月份的所有发货出库记录",
+        "answer": "summarize_shipment_outgoing"
+    },
+    {
+        "question": "请列出采购协议中，供应商为【成都香满川食品有限公司】的所有协议明细，格式为：协议名称、物品名称、规格型号、供应商、要货机构、采购单位、协议单价、税率、起订量、单价浮动比例、生效日期、失效日期",
+        "answer": "purchase_agreement_details"
+    },
+    {
+        "question": "请列出采购协议中，供应商为【成都香满川食品有限公司】的所有协议明细",
+        "answer": "purchase_agreement_details"
+    },
+    {
+        "question": "请列出供应商为【成都香满川食品有限公司】，采购机构为【贾家工厂】，时间为2月整月的所有采购订单明细，格式为：订单编号、采购机构、供应商、收货机构、订单日期、物品名称、规格型号、采购单位、采购数量、收货日期、收货数量、采购单价、采购金额、收货金额、税率、订单状态、收货人、收货电话、详细地址",
+        "answer": "purchase_order_details"
+    },
+    {
+        "question": "请列出供应商为【成都香满川食品有限公司】，采购机构为【贾家工厂】，时间为2月整月的所有采购订单明细",
+        "answer": "purchase_order_details"
+    },
+    {
+        "question": "请列出采购机构为【资阳工厂】，时间为2月整月的所有采购收货单，格式为：收货单号、供应商、采购机构、收货机构、订单日期、收货日期、物品名称、规格型号、采购单位、采购数量、收货数量、采购单价、收货金额、税率、收货仓库、订单状态、来源采购订单",
+        "answer": "purchase_receipt_details"
+    },
+    {
+        "question": "请列出采购机构为【资阳工厂】，时间为2月整月的所有采购收货单",
+        "answer": "purchase_receipt_details"
+    },
+    {
+        "question": "请将2月份所有的采购收货单中，已经全部退款了的采购收货单筛选出来，并且标识出对应的退货单号、退货金额、退货时间及提交人，格式为：采购收货单号、收货金额、退货单号、退货机构、退货金额、单据状态、退货日期、提交人",
+        "answer": "filter_refunded_purchase_receipts"
+    },
+    {
+        "question": "请将2月份所有的采购收货单中，已经全部退款了的采购收货单筛选出来",
+        "answer": "filter_refunded_purchase_receipts"
+    },
+    {
+        "question": "请基于采购调价单，整理出【四川犁羊食品有限公司】2024年整年所有调价记录，格式为：调价日期、协议名称、物品名称、采购单位、调价类型、调整前单价、调整后单价",
+        "answer": "price_adjustment_records"
+    },
+    {
+        "question": "请基于采购调价单，整理出【四川犁羊食品有限公司】2024年整年所有调价记录",
+        "answer": "price_adjustment_records"
+    },
+    {
+        "question": "基于物品管理、配送协议、采购协议，请将未加入配送协议和采购协议的物品筛选出来，格式为：物品名称、编码、类别、规格型号、统计类型、库存单位",
+        "answer": "filter_items_not_in_agreements"
+    },
+    {
+        "question": "基于物品管理、配送协议、采购协议，请将未加入配送协议和采购协议的物品筛选出来",
+        "answer": "filter_items_not_in_agreements"
+    },
+    {
+        "question": "请基于供应商管理，将类别为【联营】的供应商筛选出来，格式为：名称、编码、类别、结算方式、联系人、联系电话",
+        "answer": "filter_suppliers_by_category"
+    },
+    {
+        "question": "请基于供应商管理，将类别为【联营】的供应商筛选出来",
+        "answer": "filter_suppliers_by_category"
+    },
+    {
+        "question": "请基于供应商管理、采购协议，筛选出未建立采购协议或者采购协议已过期的供应商列表，格式为：名称、编码、类别、结算方式、联系人、联系电话",
+        "answer": "filter_suppliers_without_valid_agreements"
+    },
+    {
+        "question": "请基于供应商管理、采购协议，筛选出未建立采购协议或者采购协议已过期的供应商列表",
+        "answer": "filter_suppliers_without_valid_agreements"
+    },
+    {
+        "question": "基于仓库物品规则，请将同一个机构中，存在同一个物品重复配置到多个仓库中的物品筛选出来（需确保采购单位也相同，例如同一个物品，采购单位斤在A仓库，采购单位箱在B仓库，这样的不算重复，无需筛选出来），格式为：机构名称、物品名称、库存单位、采购单位、仓库名称",
+        "answer": "filter_duplicate_items_in_warehouses"
+    },
+    {
+        "question": "基于仓库物品规则，请将同一个机构中，存在同一个物品重复配置到多个仓库中的物品筛选出来（需确保采购单位也相同，例如同一个物品，采购单位斤在A仓库，采购单位箱在B仓库，这样的不算重复，无需筛选出来）",
+        "answer": "filter_duplicate_items_in_warehouses"
+    },
+    {
+        "question": "基于仓库物品规则，请将同一个机构中，存在同一个物品重复配置到多个仓库中的物品筛选出来",
+        "answer": "filter_duplicate_items_in_warehouses"
+    }
+]
