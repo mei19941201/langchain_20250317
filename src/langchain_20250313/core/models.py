@@ -1,6 +1,6 @@
 import os
-import numpy as np
 import torch
+import numpy as np
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.documents import Document
@@ -32,27 +32,31 @@ embedding = DashScopeEmbeddings(
     dashscope_api_key=os.environ["EMBED_API_KEY"],
 )
 
-tokenizer = AutoTokenizer.from_pretrained('./models/bge-reranker-v2-m3', use_fp16=True)
-model = AutoModelForSequenceClassification.from_pretrained('./models/bge-reranker-v2-m3')
-model.eval()
+try:
+    tokenizer = AutoTokenizer.from_pretrained('./models/bge-reranker-v2-m3', use_fp16=True)
+    model = AutoModelForSequenceClassification.from_pretrained('./models/bge-reranker-v2-m3')
+    model.eval()
 
 
-async def call_rerank(query: str, docs: list[Document], top_n: int = 3):
-    """
-    Re-ranks a list of documents based on their relevance to a given query.
+    async def call_rerank(query: str, docs: list[Document], top_n: int = 3):
+        """
+        Re-ranks a list of documents based on their relevance to a given query.
 
-    Args:
-        query (str): The query string to compare against the documents.
-        docs (list[Document]): A list of Document objects to be re-ranked.
-        top_n (int, optional): The number of top documents to return. Defaults to 3.
-    Returns:
-        list[Document]: A list of the top_n most relevant Document objects.
-    
-    """    
-    pairs = [[query, i.page_content] for i in docs]
-    with torch.no_grad():
-        inputs = tokenizer(pairs, padding=True, truncation=True, return_tensors='pt')
-        scores = model(**inputs, return_dict=True).logits.view(-1, ).float().cpu().numpy()
-    sorted_index = np.argsort(scores)[::-1]
-    sorted_index = sorted_index[:min(len(sorted_index), top_n)]
-    return [docs[i] for i in sorted_index]
+        Args:
+            query (str): The query string to compare against the documents.
+            docs (list[Document]): A list of Document objects to be re-ranked.
+            top_n (int, optional): The number of top documents to return. Defaults to 3.
+        Returns:
+            list[Document]: A list of the top_n most relevant Document objects.
+        
+        """    
+        pairs = [[query, i.page_content] for i in docs]
+        with torch.no_grad():
+            inputs = tokenizer(pairs, padding=True, truncation=True, return_tensors='pt')
+            scores = model(**inputs, return_dict=True).logits.view(-1, ).float().cpu().numpy()
+        sorted_index = np.argsort(scores)[::-1]
+        sorted_index = sorted_index[:min(len(sorted_index), top_n)]
+        return [docs[i] for i in sorted_index]
+
+except Exception:
+    ...

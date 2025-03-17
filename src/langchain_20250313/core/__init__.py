@@ -1,4 +1,11 @@
 from .log import logger
-from .models import llm, embedding, rerank, call_rerank
+try:
+    from .models import llm, embedding, rerank, call_rerank
+except Exception:
+    from .models import llm, embedding, rerank
 from .async_runtime import loop
-from .db import db
+
+try:
+    from .db import db
+except Exception:
+    ...
