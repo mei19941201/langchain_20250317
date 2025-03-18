@@ -3,4 +3,4 @@ from loguru import logger
 
 
 logger.remove(0)
-logger.add("./log/langchain.log")
+logger.add("./log/langchain.log", mode="w")

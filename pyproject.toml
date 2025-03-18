@@ -36,9 +36,12 @@ part2 = "langchain_20250313:part2"
 part4 = "langchain_20250313:part4"
 part6 = "langchain_20250313:part6"
 part9 = "langchain_20250313:part9"
-part13 = "langchain_20250313:part13"
-part13_2 = "langchain_20250313:part13_2"
-part17 = "langchain_20250313:part17"
+# part13 = "langchain_20250313:part13"
+# part13_2 = "langchain_20250313:part13_2"
+# part17 = "langchain_20250313:part17"
+
+# part chat model
+chat_model = "langchain_20250313:chat_model"
 
 [build-system]
 requires = ["hatchling"]

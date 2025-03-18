@@ -7,6 +7,8 @@ from .demo.part_9_runnable import part9
 # from .demo.part_13_retrieval2 import part13_2
 # from .demo.part_17_sql_retirever import part17
 
+from .components.chat_model import chat_model
+
 
 
 import torch
