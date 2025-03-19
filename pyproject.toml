@@ -27,6 +27,7 @@ dependencies = [
     "setuptools>=76.0.0",
     "aiomysql>=0.2.0",
     "datasets>=3.4.0",
+    "langgraph>=0.3.14",
 ]
 
 [project.scripts]
@@ -42,6 +43,8 @@ part9 = "langchain_20250313:part9"
 
 # part chat model
 chat_model = "langchain_20250313:chat_model"
+
+lg_part1="langchain_20250313:lg_part1"
 
 [build-system]
 requires = ["hatchling"]

@@ -45,6 +45,19 @@ def e(s1: str, s2: str):
     return [s1, s2]
 
 
+def f(s: str):
+    return {
+        "input": "victor"
+    }
+
+@tool
+def g(input: str):
+    """
+    return input
+    """
+    return input
+
+
 async def runnable_seq():
     prompt = "admin"
     res1 = await a.ainvoke(prompt)
@@ -70,7 +83,13 @@ async def runnable_parallel():
     logger.info(res)
 
 
+async def runnable_lambda():
+    chain = f | g
+    res = await chain.ainvoke("hello")
+    logger.info(res)
+
+
 def part9():
     
     # loop.run_until_complete(runnable_seq())
-    loop.run_until_complete(runnable_parallel())
+    loop.run_until_complete(runnable_lambda())

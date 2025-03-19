@@ -9,6 +9,7 @@ from langchain_core.messages import HumanMessage
 from langchain_core.vectorstores import VectorStoreRetriever
 from langchain_chroma import Chroma
 
+
 class MultiQuery(BaseModel):
     """
     提取多查询生成的多个问题。
