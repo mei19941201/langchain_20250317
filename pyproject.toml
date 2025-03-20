@@ -44,6 +44,9 @@ part9 = "langchain_20250313:part9"
 # part chat model
 chat_model = "langchain_20250313:chat_model"
 
+# part messages
+messages = "langchain_20250313:messages"
+
 lg_part1="langchain_20250313:lg_part1"
 
 [build-system]

@@ -9,6 +9,7 @@ from .demo.part_9_runnable2 import part9_2
 # from .demo.part_17_sql_retirever import part17
 
 from .components.chat_model import chat_model
+from .components.messages import messages
 
 
 
