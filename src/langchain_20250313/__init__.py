@@ -10,6 +10,7 @@ from .demo.part_9_runnable2 import part9_2
 
 from .components.chat_model import chat_model
 from .components.messages import messages
+from .components.prompt_templates import prompt
 
 
 
