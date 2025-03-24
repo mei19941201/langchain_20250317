@@ -1,13 +1,39 @@
-from langchain_20250313.core import llm, embedding, logger, loop, call_rerank
+from langchain_20250313.core import llm, embedding, logger, loop
 
 import json
-
+import torch
+import numpy as np
 from pydantic import BaseModel, Field
+from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.messages import HumanMessage
 from langchain_core.vectorstores import VectorStoreRetriever
-from langchain_chroma import Chroma
+from transformers import AutoModel, AutoTokenizer
+
+
+tokenizer = AutoTokenizer.from_pretrained("name")
+model = AutoTokenizer.from_pretrained("name")
+
+# rerank
+async def call_rerank(query: str, docs: list[Document], top_n: int = 3):
+        """
+        Re-ranks a list of documents based on their relevance to a given query.
+
+        Args:
+            query (str): The query string to compare against the documents.
+            docs (list[Document]): A list of Document objects to be re-ranked.
+            top_n (int, optional): The number of top documents to return. Defaults to 3.
+        Returns:
+            list[Document]: A list of the top_n most relevant Document objects.
+        
+        """    
+        pairs = [[query, i.page_content] for i in docs]
+        with torch.no_grad():
+            inputs = tokenizer(pairs, padding=True, truncation=True, return_tensors='pt')
+            scores = model(**inputs, return_dict=True).logits.view(-1, ).float().cpu().numpy()
+        sorted_index = np.argsort(scores)[::-1]
+        sorted_index = sorted_index[:min(len(sorted_index), top_n)]
+        return [docs[i] for i in sorted_index]
 
 
 class MultiQuery(BaseModel):
@@ -40,6 +66,7 @@ Provide these alternative questions separated by newlines. Original question: {q
 
 
 async def rag_fusion(question: str, retriever: VectorStoreRetriever, top_n: int = 3):
+    # rag 混合
 
     query_docs = {}
     async for i in multi_query(question=question):
@@ -61,7 +88,7 @@ async def rag_fusion(question: str, retriever: VectorStoreRetriever, top_n: int 
     return reranked_docs
 
 
-def part13_2():
+def test():
     
     question = "请帮我导出要货机构为【杜智勇 19181738589】，日期区间为2月1日到2月28日之间的所有配送申请单"
     

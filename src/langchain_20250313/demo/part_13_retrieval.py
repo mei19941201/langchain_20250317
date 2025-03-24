@@ -141,5 +141,4 @@ async def metric(top_k: int = 5, top_n: int = 3, rerank: bool = False):
 
 
 def part13():
-
     loop.run_until_complete(metric(rerank=True))
