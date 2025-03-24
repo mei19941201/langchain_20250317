@@ -53,6 +53,9 @@ prompt = "langchain_20250313:prompt"
 # part parser
 parser = "langchain_20250313:parser"
 
+# LCEL parser
+lcel = "langchain_20250313:lcel"
+
 lg_part1="langchain_20250313:lg_part1"
 
 [build-system]
