@@ -12,7 +12,10 @@ from .components.chat_model import chat_model
 from .components.messages import messages
 from .components.prompt_templates import prompt
 from .components.output_parser import parser
+
 from .LCEL import lcel
+
+from .usage.qa_with_rag import qa_with_rag
 
 
 import torch

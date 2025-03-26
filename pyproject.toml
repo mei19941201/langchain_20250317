@@ -57,6 +57,9 @@ parser = "langchain_20250313:parser"
 # LCEL parser
 lcel = "langchain_20250313:lcel"
 
+# usage
+qa_with_rag = "langchain_20250313:qa_with_rag"
+
 lg_part1="langchain_20250313:lg_part1"
 
 [build-system]
