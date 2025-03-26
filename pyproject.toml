@@ -29,6 +29,9 @@ dependencies = [
     "datasets>=3.4.0",
     "langgraph>=0.3.14",
     "grandalf>=0.8",
+    "matplotlib>=3.10.1",
+    "ipython>=8.34.0",
+    "opencv-python>=4.11.0.86",
 ]
 
 [project.scripts]
@@ -60,7 +63,11 @@ lcel = "langchain_20250313:lcel"
 # usage
 qa_with_rag = "langchain_20250313:qa_with_rag"
 
-lg_part1="langchain_20250313:lg_part1"
+# langgraph base
+graph_base="langchain_20250313:graph_base"
+
+# langgraph guide
+graph_guide="langchain_20250313:graph_guide"
 
 [build-system]
 requires = ["hatchling"]

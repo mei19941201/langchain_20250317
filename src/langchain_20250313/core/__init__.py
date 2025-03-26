@@ -1,4 +1,5 @@
 from .log import logger
+from .utils import graph_show
 try:
     from .models import llm, embedding, rerank, call_rerank
 except Exception:

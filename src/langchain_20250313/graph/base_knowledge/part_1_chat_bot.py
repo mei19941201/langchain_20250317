@@ -2,10 +2,8 @@ from langchain_20250313.core import llm, loop, logger
 
 from typing import Annotated
 from typing_extensions import TypedDict
-from langgraph.graph import StateGraph, START, END
+from langgraph.graph import StateGraph, START, END, MessagesState
 from langgraph.graph.message import add_messages, Messages
-
-
 
 
 class MyState(TypedDict):
@@ -29,7 +27,7 @@ def chatbot(state: MyState):
     }
 
 
-async def chat_bot():
+async def run():
     logger.info("Starting chat_bot")
     graph = StateGraph(MyState)
     graph.add_node("log_state1", log_state)
@@ -43,16 +41,14 @@ async def chat_bot():
 
     graph.add_edge("log_state2", END)
     graph = graph.compile()
-    while True:
-        i = input("Enter a message: ")
-        if i == "q":
-            break
-        res = await graph.ainvoke(
-            {"messages": [{"role": "user", "content": i}]}
-        )
-        logger.info(res)
-    logger.info("chat_bot Done")
 
-
-def lg_part1():
-    loop.run_until_complete(chat_bot())
+    graph.get_graph().print_ascii()
+    # while True:
+    #     i = input("Enter a message: ")
+    #     if i == "q":
+    #         break
+    #     res = await graph.ainvoke(
+    #         {"messages": [{"role": "user", "content": i}]}
+    #     )
+    #     logger.info(res)
+    # logger.info("chat_bot Done")

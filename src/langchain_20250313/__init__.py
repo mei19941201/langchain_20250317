@@ -17,6 +17,9 @@ from .LCEL import lcel
 
 from .usage.qa_with_rag import qa_with_rag
 
+from .graph.base_knowledge import graph_base
+from .graph.guide import graph_guide
+
 
 import torch
 
