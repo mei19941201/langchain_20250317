@@ -19,6 +19,7 @@ from .usage.qa_with_rag import qa_with_rag
 
 from .graph.base_knowledge import graph_base
 from .graph.guide import graph_guide
+from .graph.fine_grained_control import fine_grianed_control
 
 
 import torch

@@ -32,6 +32,7 @@ dependencies = [
     "matplotlib>=3.10.1",
     "ipython>=8.34.0",
     "opencv-python>=4.11.0.86",
+    "langchain-dashscope>=0.1.8",
 ]
 
 [project.scripts]
@@ -68,6 +69,9 @@ graph_base="langchain_20250313:graph_base"
 
 # langgraph guide
 graph_guide="langchain_20250313:graph_guide"
+
+# langgraph guide
+fine_grianed_control="langchain_20250313:fine_grianed_control"
 
 [build-system]
 requires = ["hatchling"]
